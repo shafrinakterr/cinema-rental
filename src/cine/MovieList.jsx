@@ -7,7 +7,7 @@ const MovieList = () => {
     <div className="content">
       <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-7">
         {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie}></MovieCard>
+          <MovieCard key={movie.id} movie={movie}/>
         ))}
       </div>
     </div>
