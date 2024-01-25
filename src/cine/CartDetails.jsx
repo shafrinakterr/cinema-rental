@@ -4,6 +4,7 @@ import CheakOut from "../assets/icons/checkout.svg";
 import { useContext } from "react";
 import { MovieContext } from "../context";
 import { getImgUrl } from "../utils/cine-utility";
+import { Bounce, toast } from "react-toastify";
 
 const CartDetails = ({ onClose }) => {
   const { state, dispatch } = useContext(MovieContext);
@@ -14,6 +15,17 @@ const CartDetails = ({ onClose }) => {
       payload: item
 
     })
+    toast.success(`Remove ${item.title} successfully from the cart`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+      });
   };
   return (
     <div className="fixed top-0 left-0 w-screen h-screen z-50 bg-black/60 backdrop-blur-sm">
